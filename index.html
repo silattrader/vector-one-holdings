@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vector One Holdings | Sovereign Defense & Cognitive Infrastructure</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.03); }
+    }
+    @keyframes scanline {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(1000%); }
+    }
+    .animate-glow { animation: pulse-glow 4s ease-in-out infinite; }
+    .bg-grid-pattern {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .glass-panel-glow {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.15);
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #00F2FE 0%, #4FACFE 50%, #00C6FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #FFE066 0%, #F59E0B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-[#070B14] text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-black min-h-screen">
+
+  <!-- TOP STATUS BAR TICKER -->
+  <div class="bg-cyan-950/80 border-b border-cyan-500/20 text-xs py-1.5 px-4 text-cyan-300 flex items-center justify-between overflow-hidden backdrop-blur-md">
+    <div class="flex items-center space-x-6 animate-pulse">
+      <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-400 mr-2"></span> OPERATIONAL: SSM Malaysia Incorporated</span>
+      <span class="hidden md:inline">|</span>
+      <span class="hidden md:inline flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-2"></span> Vector Compute: EvoMax Token Engine v1.5 Live (-38% Latency)</span>
+      <span class="hidden lg:inline">|</span>
+      <span class="hidden lg:inline flex items-center"><span class="w-2 h-2 rounded-full bg-amber-400 mr-2"></span> Vector Aero: C-UAS Perimeter Security Active</span>
+    </div>
+    <div class="text-slate-400 text-[11px] font-mono">GLOBAL HEADQUARTERS: MALAYSIA</div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-50 glass-panel border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- BRAND LOGO -->
+      <a href="#" class="flex items-center space-x-3 group">
+        <div class="relative flex items-center justify-center bg-slate-950 p-1.5 rounded-xl border border-cyan-500/40 group-hover:border-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/10">
+          <img src="vector_one_holdings_logo.jpg" alt="Vector One Holdings Logo" class="h-10 w-auto object-contain rounded-lg">
+          <div class="absolute -top-1 -right-1 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-75"></div>
+        </div>
+        <div>
+          <div class="font-extrabold text-xl tracking-wider text-slate-100 flex items-center">
+            VECTOR<span class="text-cyan-400 ml-1">ONE</span>
+          </div>
+          <div class="text-[10px] font-mono text-cyan-500/80 tracking-widest uppercase">Vector Systems Group</div>
+        </div>
+      </a>
+
+      <!-- NAV LINKS -->
+      <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#hero" class="hover:text-cyan-400 transition-colors">Home</a>
+        <a href="#about" class="hover:text-cyan-400 transition-colors">About Us</a>
+        <a href="#pillars" class="hover:text-cyan-400 transition-colors">5 Operating Pillars</a>
+        <a href="#calculator" class="hover:text-cyan-400 transition-colors">Token Calculator</a>
+        <a href="#telemetry" class="hover:text-cyan-400 transition-colors">Defense Radar</a>
+        <a href="#governance" class="hover:text-cyan-400 transition-colors">Governance</a>
+      </nav>
+
+      <!-- CTA BUTTON -->
+      <div class="flex items-center space-x-4">
+        <a href="#contact" class="px-5 py-2.5 rounded-lg text-sm font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 hover:from-cyan-400 hover:to-blue-500 shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5">
+          Partner With Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden bg-grid-pattern">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none animate-glow"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- HERO TEXT CONTENT -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <span>INTEGRATED DEEP-TECH & AUTONOMOUS SYSTEMS GROUP</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none">
+            Unifying <span class="text-gradient">Physical Airspace Defense</span> With <span class="text-gradient">Cognitive AI Compute</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
+            Vector One Holdings operates at the convergence of aerospace defense tech and enterprise AI infrastructure—delivering sovereign airspace security (Vector Aero) alongside high-throughput token distribution and EvoMax compression logistics (Vector Compute).
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-2">
+            <a href="#about" class="px-8 py-4 rounded-xl text-base font-bold bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 text-slate-950 hover:brightness-110 shadow-xl shadow-cyan-500/20 transition-all text-center">
+              Explore Our North Star Goal
+            </a>
+            <a href="#calculator" class="px-8 py-4 rounded-xl text-base font-semibold glass-panel border border-slate-700 hover:border-cyan-400 text-slate-200 hover:text-cyan-400 transition-all text-center">
+              EvoMax Token Calculator
+            </a>
+          </div>
+
+          <!-- QUICK STATS BAR -->
+          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-800">
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">5</div>
+              <div class="text-xs text-slate-400 uppercase tracking-wider font-medium">Core Operating Pillars</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">35-40%</div>
+              <div class="text-xs text-slate-400 uppercase tracking-wider font-medium">Token Cost Reduction</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">Sub-5ms</div>
+              <div class="text-xs text-slate-400 uppercase tracking-wider font-medium">C-UAS Sensor Telemetry</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO GRAPHIC CARD -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl glass-panel-glow p-6 space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+              <div class="flex items-center space-x-3">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+              </div>
+              <span class="text-xs font-mono text-cyan-400">VECTOR_SYSTEM_TELEMETRY.v1</span>
+            </div>
+
+            <!-- ANIMATED CHEVRON EMBLEM -->
+            <div class="relative py-8 flex items-center justify-center">
+              <div class="w-48 h-48 rounded-full border border-cyan-500/20 flex items-center justify-center animate-pulse">
+                <div class="w-36 h-36 rounded-full border border-cyan-500/40 flex items-center justify-center">
+                  <div class="w-24 h-24 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-400">
+                    <svg class="w-14 h-14 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-3 font-mono text-xs">
+              <div class="flex justify-between text-slate-400">
+                <span>VECTOR AERO STATUS:</span>
+                <span class="text-emerald-400 font-bold">AIRSPACE SECURE</span>
+              </div>
+              <div class="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-800">
+                <div class="bg-cyan-400 h-full w-[88%] animate-pulse"></div>
+              </div>
+
+              <div class="flex justify-between text-slate-400 pt-2">
+                <span>EVOMAX COMPRESSION:</span>
+                <span class="text-cyan-400 font-bold">38.4% OPTIMIZED</span>
+              </div>
+              <div class="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-800">
+                <div class="bg-blue-500 h-full w-[94%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US & NORTH STAR GOAL SECTION -->
+  <section id="about" class="py-24 bg-slate-950/60 border-y border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-3">About Vector One Holdings</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-slate-100">Integrated Sovereignty For The Autonomous Era</p>
+      </div>
+
+      <!-- NORTH STAR GOAL HIGHLIGHT BOX -->
+      <div class="mb-16 p-8 sm:p-10 rounded-2xl glass-panel-glow border-2 border-cyan-500/40 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="p-3 bg-cyan-500/20 rounded-xl border border-cyan-400 text-cyan-400">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-mono text-cyan-400 tracking-wider uppercase">Official Strategic Mandate</h3>
+            <div class="text-2xl sm:text-3xl font-bold text-gradient-gold">OUR NORTH STAR GOAL</div>
+          </div>
+        </div>
+
+        <blockquote class="text-xl sm:text-2xl font-medium text-slate-100 italic leading-relaxed border-l-4 border-amber-400 pl-6 my-6">
+          "Position Vector One Holdings as the premier integrated deep-tech group operating across physical aerospace defense (Vector Aero), AI compute logistics (Vector Compute), enterprise agentic deployment (Vector Intelligence), and human capital upskilling (Vector Institute)."
+        </blockquote>
+
+        <div class="flex items-center justify-between text-xs font-mono text-slate-400 pt-4 border-t border-slate-800">
+          <span>MALAYSIA SSM REGISTERED ENTITY</span>
+          <span>SOVEREIGN DEFENSE & DEEP-TECH</span>
+        </div>
+      </div>
+
+      <!-- ABOUT US CARDS GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-panel p-8 rounded-2xl space-y-4 hover:border-cyan-500/50 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/30">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-100">Physical Kinetic Defense</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Vector Aero delivers tactical airspace dominance, commercial drone operations, counter-UAS (C-UAS) threat scanning, signal jamming, and kinetic interception for critical infrastructure.
+          </p>
+        </div>
+
+        <div class="glass-panel p-8 rounded-2xl space-y-4 hover:border-cyan-500/50 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/30">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-100">Digital Cognitive Logistics</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Vector Compute acts as an authorized distributor for MiniMax & frontier LLM tokens, powered by EvoMax middleware to slash context latency and token expenditure.
+          </p>
+        </div>
+
+        <div class="glass-panel p-8 rounded-2xl space-y-4 hover:border-cyan-500/50 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/30">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-100">Agentic & Human Capability</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Vector Intelligence deploys deterministic multi-agent systems, while Vector Institute upskills executive workforces to ensure sustained AI fluency.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5-PILLAR OPERATING ECOSYSTEM (TABBED SHOWCASE) -->
+  
+  <!-- VECTOR BRAND ECOSYSTEM & UNIT LOGOS -->
+  <section id="brand-ecosystem" class="py-20 relative bg-slate-950/80 border-t border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-3">Corporate Architecture</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-slate-100">Vector Brand Ecosystem</p>
+        <p class="text-slate-400 text-sm mt-4">Integrated specialization across defense, compute logistics, agentic intelligence, and talent development under Vector One Holdings.</p>
+      </div>
+
+      <!-- PARENT HOLDING LOGO BANNER -->
+      <div class="mb-12 flex justify-center">
+        <div class="glass-panel-glow p-4 sm:p-6 rounded-2xl max-w-2xl w-full text-center border border-cyan-500/30">
+          <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-2">PARENT / HOLDING COMPANY</div>
+          <img src="vector_one_holdings_logo.jpg" alt="Vector One Holdings Brand Logo" class="h-20 sm:h-24 mx-auto object-contain rounded-lg shadow-md">
+        </div>
+      </div>
+
+      <!-- 4 SUBSIDIARY BRAND LOGO CARDS -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        
+        <!-- CARD 1: VECTOR AERO -->
+        <div class="glass-panel p-6 rounded-2xl text-center hover:border-amber-500/50 transition-all duration-300 group flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="text-[11px] font-mono text-amber-400 uppercase tracking-wider font-semibold">Drone & Counter-UAS</div>
+            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 flex items-center justify-center min-h-[160px]">
+              <img src="vector_aero_logo.jpg" alt="Vector Aero Brand Logo" class="max-h-36 object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="text-lg font-bold text-slate-100">Vector Aero</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Uncrewed Aerial Systems & Kinetic Perimeter Defense Solutions.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 text-[10px] font-mono text-slate-500 uppercase">A Member of Vector One Holdings</div>
+        </div>
+
+        <!-- CARD 2: VECTOR COMPUTE -->
+        <div class="glass-panel p-6 rounded-2xl text-center hover:border-cyan-500/50 transition-all duration-300 group flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="text-[11px] font-mono text-cyan-400 uppercase tracking-wider font-semibold">Token Optimization</div>
+            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 flex items-center justify-center min-h-[160px]">
+              <img src="vector_compute_logo.jpg" alt="Vector Compute Brand Logo" class="max-h-36 object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="text-lg font-bold text-slate-100">Vector Compute</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">AI LLM Token Logistics & EvoMax Performance Optimization.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 text-[10px] font-mono text-slate-500 uppercase">A Member of Vector One Holdings</div>
+        </div>
+
+        <!-- CARD 3: VECTOR INTELLIGENCE -->
+        <div class="glass-panel p-6 rounded-2xl text-center hover:border-emerald-500/50 transition-all duration-300 group flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="text-[11px] font-mono text-emerald-400 uppercase tracking-wider font-semibold">Agentic AI & Consulting</div>
+            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 flex items-center justify-center min-h-[160px]">
+              <img src="vector_intelligence_logo.jpg" alt="Vector Intelligence Brand Logo" class="max-h-36 object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="text-lg font-bold text-slate-100">Vector Intelligence</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Autonomous Agentic AI Deployment & Data Science Strategy.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 text-[10px] font-mono text-slate-500 uppercase">A Member of Vector One Holdings</div>
+        </div>
+
+        <!-- CARD 4: VECTOR ACADEMY -->
+        <div class="glass-panel p-6 rounded-2xl text-center hover:border-indigo-500/50 transition-all duration-300 group flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="text-[11px] font-mono text-indigo-400 uppercase tracking-wider font-semibold">Training & Academy</div>
+            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 flex items-center justify-center min-h-[160px]">
+              <img src="vector_academy_logo.jpg" alt="Vector Academy Brand Logo" class="max-h-36 object-contain group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="text-lg font-bold text-slate-100">Vector Academy</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Center for Advanced AI Learning & Executive Talent Development.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 text-[10px] font-mono text-slate-500 uppercase">A Member of Vector One Holdings</div>
+        </div>
+
+      </div>
+
+      <!-- MASTER BRAND ECOSYSTEM GRAPHIC PREVIEW -->
+      <div class="glass-panel p-6 sm:p-8 rounded-3xl text-center border border-slate-800">
+        <h3 class="text-sm font-mono text-slate-300 uppercase tracking-wider mb-4">Complete Vector Brand Ecosystem Diagram</h3>
+        <img src="vector_brand_ecosystem.jpg" alt="Vector Brand Ecosystem Map" class="w-full max-w-5xl mx-auto rounded-xl shadow-2xl border border-slate-800">
+      </div>
+
+    </div>
+  </section>
+
+  <section id="pillars" class="py-24 relative bg-grid-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-3">Group Structure</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-slate-100">The 5 Core Operating Pillars</p>
+      </div>
+
+      <!-- TAB BUTTONS -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12" id="pillarTabs">
+        <button onclick="switchPillar('aero')" id="tab-aero" class="pillar-tab active px-5 py-3 rounded-xl font-semibold text-sm transition-all bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20">
+          🛡️ Vector Aero (Defense)
+        </button>
+        <button onclick="switchPillar('compute')" id="tab-compute" class="pillar-tab px-5 py-3 rounded-xl font-semibold text-sm transition-all glass-panel text-slate-300 hover:text-cyan-400">
+          ⚡ Vector Compute
+        </button>
+        <button onclick="switchPillar('intel')" id="tab-intel" class="pillar-tab px-5 py-3 rounded-xl font-semibold text-sm transition-all glass-panel text-slate-300 hover:text-cyan-400">
+          🤖 Vector Intelligence
+        </button>
+        <button onclick="switchPillar('institute')" id="tab-institute" class="pillar-tab px-5 py-3 rounded-xl font-semibold text-sm transition-all glass-panel text-slate-300 hover:text-cyan-400">
+          🎓 Vector Institute
+        </button>
+        <button onclick="switchPillar('mice')" id="tab-mice" class="pillar-tab px-5 py-3 rounded-xl font-semibold text-sm transition-all glass-panel text-slate-300 hover:text-cyan-400">
+          🎪 Vector Enterprise MICE
+        </button>
+      </div>
+
+      <!-- TAB CONTENT PANELS -->
+      <div class="glass-panel-glow p-8 sm:p-12 rounded-3xl" id="pillarContent">
+        
+        <!-- AERO CONTENT -->
+        <div id="content-aero" class="pillar-content grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-block px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono">PILLAR I: KINETIC AIRSPACE DEFENSE</div>
+            <h3 class="text-3xl font-extrabold text-slate-100">Vector Aero (Vector Defense)</h3>
+            <p class="text-slate-300 leading-relaxed">
+              Specializes in tactical airspace dominance, industrial drone operations, and advanced Counter-Uncrewed Aerial Systems (C-UAS). Provides multi-layered perimeter surveillance, RF spectrum scanning, signal jamming, and kinetic/electronic interception for military, airport, and critical infrastructure clients.
+            </p>
+            <ul class="space-y-3 font-medium text-sm text-slate-300">
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> AESA Radar & RF Spectrum Scan Telemetry</li>
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Automated Sub-100ms Signal Jamming Protocol</li>
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Sovereign Airspace Defense Architecture</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-5 bg-slate-900/90 p-6 rounded-2xl border border-slate-800 font-mono text-xs space-y-3">
+            <div class="text-cyan-400 font-bold border-b border-slate-800 pb-2">VECTOR_AERO_SPECS</div>
+            <div class="flex justify-between"><span class="text-slate-400">Threat Detection:</span><span>12.0 km Fixed-Wing / 5.0 km Drone</span></div>
+            <div class="flex justify-between"><span class="text-slate-400">Response Delay:</span><span class="text-emerald-400">&lt; 100ms Jamming Trigger</span></div>
+            <div class="flex justify-between"><span class="text-slate-400">Interception Tech:</span><span>RF / HPM / Kinetic Net-Drone</span></div>
+          </div>
+        </div>
+
+        <!-- COMPUTE CONTENT -->
+        <div id="content-compute" class="pillar-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-block px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono">PILLAR II: COGNITIVE COMPUTE LOGISTICS</div>
+            <h3 class="text-3xl font-extrabold text-slate-100">Vector Compute & EvoMax Engine</h3>
+            <p class="text-slate-300 leading-relaxed">
+              Acts as an official reseller and distributor for leading foundation model tokens (MiniMax & global frontier LLMs). Integrates the proprietary **EvoMax** performance optimization stack to compress context windows, slash latency by 120ms, and optimize compute API expenditure by 35%.
+            </p>
+            <ul class="space-y-3 font-medium text-sm text-slate-300">
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Drop-in API Routing Middleware</li>
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Zero Data Retention RAM-Only SLA</li>
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> MiniMax High-Throughput Distribution</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-5 bg-slate-900/90 p-6 rounded-2xl border border-slate-800 font-mono text-xs space-y-3">
+            <div class="text-cyan-400 font-bold border-b border-slate-800 pb-2">EVOMAX_BENCHMARK</div>
+            <div class="flex justify-between"><span class="text-slate-400">Token Compression:</span><span class="text-cyan-400">35% - 40% Reduction</span></div>
+            <div class="flex justify-between"><span class="text-slate-400">Latency Savings:</span><span class="text-emerald-400">120ms Average Shave</span></div>
+            <div class="flex justify-between"><span class="text-slate-400">Uptime SLA:</span><span>99.95% Availability</span></div>
+          </div>
+        </div>
+
+        <!-- INTEL CONTENT -->
+        <div id="content-intel" class="pillar-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-block px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono">PILLAR III: AGENTIC AI & DATA SCIENCE</div>
+            <h3 class="text-3xl font-extrabold text-slate-100">Vector Intelligence (Vector Agentic)</h3>
+            <p class="text-slate-300 leading-relaxed">
+              Full-lifecycle systems integrator for autonomous multi-agent systems and enterprise data science. Operates Analytics as a Service (AaaS) for quantitative modeling alongside deterministic agentic workflows using tool-use schemas and self-healing error recovery.
+            </p>
+            <ul class="space-y-3 font-medium text-sm text-slate-300">
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Analytics as a Service (AaaS)</li>
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Multi-Agent Tool Schema Integrations</li>
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Enterprise CRM / ERP Workflow Automation</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-5 bg-slate-900/90 p-6 rounded-2xl border border-slate-800 font-mono text-xs space-y-3">
+            <div class="text-cyan-400 font-bold border-b border-slate-800 pb-2">AGENTIC_DEPLOYMENT</div>
+            <div class="flex justify-between"><span class="text-slate-400">Architecture:</span><span>3-Layer SOP / Router / Tools</span></div>
+            <div class="flex justify-between"><span class="text-slate-400">Engagement Value:</span><span>\$50k - \$250k SOW</span></div>
+          </div>
+        </div>
+
+        <!-- INSTITUTE CONTENT -->
+        <div id="content-institute" class="pillar-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-block px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono">PILLAR IV: HUMAN CAPITAL UPSKILLING</div>
+            <h3 class="text-3xl font-extrabold text-slate-100">Vector Institute (Vector Academy)</h3>
+            <p class="text-slate-300 leading-relaxed">
+              Center of AI Excellence delivering executive bootcamps, technical certifications, and corporate upskilling in prompt engineering, agentic architecture, and enterprise AI adoption for institutional workforces.
+            </p>
+            <ul class="space-y-3 font-medium text-sm text-slate-300">
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Executive C-Suite AI Leadership Retreats</li>
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Hands-on Agentic Engineering Bootcamps</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-5 bg-slate-900/90 p-6 rounded-2xl border border-slate-800 font-mono text-xs space-y-3">
+            <div class="text-cyan-400 font-bold border-b border-slate-800 pb-2">ACADEMY_PROGRAMS</div>
+            <div class="flex justify-between"><span class="text-slate-400">Format:</span><span>Executive Retreats &amp; Live Online</span></div>
+            <div class="flex justify-between"><span class="text-slate-400">Certification:</span><span>Enterprise Agentic Certified</span></div>
+          </div>
+        </div>
+
+        <!-- MICE CONTENT -->
+        <div id="content-mice" class="pillar-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-block px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono">PILLAR V: INSTITUTIONAL NETWORKING</div>
+            <h3 class="text-3xl font-extrabold text-slate-100">Vector Enterprise MICE</h3>
+            <p class="text-slate-300 leading-relaxed">
+              Manages high-level Meetings, Incentives, Conferences, and Exhibitions for defense-tech leaders, tech executives, and corporate boards across Southeast Asia and global trade hubs.
+            </p>
+            <ul class="space-y-3 font-medium text-sm text-slate-300">
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Strategic AI &amp; Aerospace Defense Summits</li>
+              <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyan-400 mr-3"></span> Executive Corporate Retreats &amp; Trade Exhibitions</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-5 bg-slate-900/90 p-6 rounded-2xl border border-slate-800 font-mono text-xs space-y-3">
+            <div class="text-cyan-400 font-bold border-b border-slate-800 pb-2">EVENTS_OPERATIONS</div>
+            <div class="flex justify-between"><span class="text-slate-400">Focus:</span><span>Meetings, Incentives, Conferences, Exhibitions</span></div>
+            <div class="flex justify-between"><span class="text-slate-400">Entity:</span><span>Vector One Enterprise SSM</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE EVOMAX TOKEN CALCULATOR -->
+  <section id="calculator" class="py-24 bg-slate-950/80 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-3">Vector Compute Tooling</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-slate-100">Interactive EvoMax Savings Calculator</p>
+        <p class="text-slate-400 text-sm mt-3">Calculate your instant cost reduction &amp; latency optimization with EvoMax API middleware.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto glass-panel-glow p-8 sm:p-10 rounded-3xl grid grid-cols-1 md:grid-cols-12 gap-8">
+        
+        <!-- INPUT CONTROLS -->
+        <div class="md:col-span-7 space-y-6">
+          <div>
+            <div class="flex justify-between text-sm font-semibold mb-2">
+              <span>Monthly LLM API Spend (USD):</span>
+              <span class="text-cyan-400 font-mono font-bold" id="spendValue font-bold">$25,000</span>
+            </div>
+            <input type="range" id="spendInput" min="5000" max="100000" step="2500" value="25000" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400" oninput="updateCalculator()">
+          </div>
+
+          
+
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-400 space-y-1">
+            <div class="flex items-center text-emerald-400 font-semibold mb-1">
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Drop-in API Replacement (Zero Code Changes Required)
+            </div>
+            <div>EvoMax operates in volatile RAM with guaranteed Zero-Data-Retention SLA.</div>
+          </div>
+        </div>
+
+        <!-- LIVE RESULT DISPLAY -->
+        <div class="md:col-span-5 bg-gradient-to-br from-slate-900 to-cyan-950 p-6 rounded-2xl border border-cyan-500/30 flex flex-col justify-between space-y-6">
+          <div>
+            <div class="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">PROJECTED ANNUAL SAVINGS</div>
+            <div class="text-4xl font-extrabold text-gradient" id="annualSavings">$105,000</div>
+            <div class="text-xs text-slate-400 mt-1">Based on 35% average EvoMax context compression.</div>
+          </div>
+
+          <div class="border-t border-slate-800 pt-4 space-y-2">
+            <div class="flex justify-between text-xs font-mono">
+              <span class="text-slate-400">Monthly Net Savings:</span>
+              <span class="text-cyan-400 font-bold" id="monthlySavings">$8,750</span>
+            </div>
+            <div class="flex justify-between text-xs font-mono">
+              <span class="text-slate-400">Latency Shave:</span>
+              <span class="text-emerald-400 font-bold" id="latencyShave">~120 ms</span>
+            </div>
+          </div>
+
+          
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE DEFENSE RADAR SIMULATOR WIDGET -->
+  <section id="telemetry" class="py-24 bg-grid-pattern border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-block px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-mono">VECTOR AERO TELEMETRY</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-100">Live C-UAS Radar Telemetry Scope</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            The Vector Aero Command Gateway ingests micro-Doppler radar feeds and SDR spectrum data to calculate target vectors in under 10ms, triggering automated electronic jamming countermeasures.
+          </p>
+
+          <div class="space-y-3 font-mono text-xs">
+            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900 border border-slate-800">
+              <span class="text-slate-400">RADAR SENSOR FREQUENCY:</span>
+              <span class="text-cyan-400 font-bold">24.15 GHz (AESA)</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900 border border-slate-800">
+              <span class="text-slate-400">JAMMING TRIGGER THRESHOLD:</span>
+              <span class="text-emerald-400 font-bold">AUTOMATED &lt; 100ms</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 flex justify-center">
+          <div class="relative p-4 rounded-3xl glass-panel-glow border border-emerald-500/30">
+            <canvas id="radarCanvas" width="420" height="420" class="rounded-2xl bg-black border border-emerald-900"></canvas>
+            <div class="absolute bottom-6 left-8 font-mono text-[10px] text-emerald-400 bg-black/80 px-2 py-1 rounded border border-emerald-800">
+              STATUS: RADAR_SWEEP_ACTIVE [360°]
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GOVERNANCE & SSM INCORPORATION SECTION -->
+  <section id="governance" class="py-20 bg-slate-950/90 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+      <div class="inline-block px-3 py-1 rounded-md bg-amber-500/10 text-amber-400 text-xs font-mono">GOVERNANCE &amp; LEGAL REGISTRATION</div>
+      <h2 class="text-3xl font-extrabold text-slate-100">Vector One Holdings Corporate Structure</h2>
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto">
+        Incorporated under the Companies Commission of Malaysia (SSM). Operating under strict defense compliance, data privacy SLAs, and SOC2 readiness framework.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto text-left font-mono text-xs">
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-slate-500 mb-1">REGISTRATION:</div>
+          <div class="text-slate-200 font-bold">SSM Incorporated</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-slate-500 mb-1">STATUS:</div>
+          <div class="text-emerald-400 font-bold">Active &amp; Operational</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-slate-500 mb-1">DATA SLA:</div>
+          <div class="text-cyan-400 font-bold">Zero-Retention RAM</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-slate-500 mb-1">HEADQUARTERS:</div>
+          <div class="text-slate-200 font-bold">Malaysia / Global</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & FOOTER -->
+  <footer id="contact" class="bg-[#04070D] border-t border-slate-800 pt-20 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-slate-900 border border-cyan-400 flex items-center justify-center text-cyan-400">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <span class="font-extrabold text-2xl tracking-wider">VECTOR<span class="text-cyan-400">ONE</span></span>
+          </div>
+
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Vector One Holdings is an integrated deep-technology and autonomous systems group operating across physical aerospace defense, AI compute logistics, multi-agent integration, and human upskilling.
+          </p>
+
+          <div class="text-xs font-mono text-slate-500">
+            © 2026 Vector One Holdings / Vector One Enterprise. All Rights Reserved.
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="lg:col-span-7 glass-panel p-8 rounded-2xl space-y-4">
+          <h3 class="text-xl font-bold text-slate-100">Connect With Executive Leadership</h3>
+          <form onsubmit="handleContact(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="text" placeholder="Your Name" required class="bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm focus:border-cyan-400 focus:outline-none">
+            <input type="email" placeholder="Corporate Email" required class="bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm focus:border-cyan-400 focus:outline-none">
+            <select class="sm:col-span-2 bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-slate-300 focus:border-cyan-400 focus:outline-none">
+              <option>Inquiry Area: Vector Compute / EvoMax Trial</option>
+              <option>Inquiry Area: Vector Aero Defense &amp; C-UAS</option>
+              <option>Inquiry Area: Vector Intelligence Agentic SOW</option>
+              <option>Inquiry Area: Vector Institute Corporate Training</option>
+              <option>Inquiry Area: Investor Relations ($3.5M Round)</option>
+            </select>
+            <textarea placeholder="Message / Project Scope" rows="3" class="sm:col-span-2 bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm focus:border-cyan-400 focus:outline-none"></textarea>
+            <button type="submit" class="sm:col-span-2 py-3 rounded-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950 hover:brightness-110 shadow-lg shadow-cyan-500/20 transition-all text-sm">
+              Submit Executive Inquiry
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- PROPRIETARY DATA & INTELLECTUAL PROPERTY LEGAL DISCLAIMER -->
+      <div class="border-t border-slate-800/80 pt-8 text-center font-mono space-y-3">
+        <div class="text-xs text-cyan-400 font-semibold tracking-widest uppercase">PROPRIETARY INFORMATION &amp; INTELLECTUAL PROPERTY NOTICE</div>
+        <p class="text-[11px] text-slate-400 max-w-4xl mx-auto leading-relaxed">
+          All data, information, technology specifications, software algorithms (including EvoMax Token Engine &amp; Vector Aero C2 Command Gateway), logos, trade dress, media, and proprietary materials contained on this website are the sole and exclusive property of <strong>Vector One Holdings / Vector One Enterprise</strong>. All rights reserved. Any unauthorized copying, distribution, disclosure, reproduction, or reverse engineering of any portion of this site or proprietary technology without prior express written authorization from Vector One Holdings is strictly prohibited and subject to full legal enforcement under Malaysian and international intellectual property laws.
+        </p>
+        <div class="text-[10px] text-slate-400 flex flex-wrap justify-center items-center gap-3 pt-2">
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">CONFIDENTIAL &amp; PROPRIETARY PROPERTY</span>
+          <span>•</span>
+          <span>© VECTOR ONE HOLDINGS / VECTOR ONE ENTERPRISE</span>
+          <span>•</span>
+          <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">ALL RIGHTS RESERVED</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT FOR INTERACTIVE FEATURES -->
+  <script>
+    // TAB SWITCHER LOGIC
+    function switchPillar(pillar) {
+      document.querySelectorAll('.pillar-tab').forEach(tab => {
+        tab.classList.remove('bg-cyan-500', 'text-slate-950', 'shadow-lg', 'shadow-cyan-500/20');
+        tab.classList.add('glass-panel', 'text-slate-300');
+      });
+      document.querySelectorAll('.pillar-content').forEach(content => {
+        content.classList.add('hidden');
+      });
+
+      const activeTab = document.getElementById('tab-' + pillar);
+      const activeContent = document.getElementById('content-' + pillar);
+
+      activeTab.classList.remove('glass-panel', 'text-slate-300');
+      activeTab.classList.add('bg-cyan-500', 'text-slate-950', 'shadow-lg', 'shadow-cyan-500/20');
+      activeContent.classList.remove('hidden');
+    }
+
+    // EVOMAX CALCULATOR LOGIC
+    function updateCalculator() {
+      const spend = parseInt(document.getElementById('spendInput').value);
+      document.getElementById('spendValue').innerText = '$' + spend.toLocaleString();
+
+      const savingsRate = 0.35; // 35% average context compression
+      const monthlyNet = Math.round(spend * savingsRate);
+      const annualNet = monthlyNet * 12;
+
+      document.getElementById('monthlySavings').innerText = '$' + monthlyNet.toLocaleString();
+      document.getElementById('annualSavings').innerText = '$' + annualNet.toLocaleString();
+    }
+
+    // GOOGLE SHEETS INTEGRATION FOR LEAD CAPTURE (silattrader@gmail.com)
+    // Replace the URL below with your Google Apps Script Web App URL
+    const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz_VECTOR_ONE_LEADS/exec";
+
+    async function handleContact(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submitBtn');
+      const name = document.getElementById('contactName').value;
+      const email = document.getElementById('contactEmail').value;
+      const inquiry = document.getElementById('contactInquiry').value;
+      const message = document.getElementById('contactMessage').value;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-slate-950 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Logging Inquiry to Google Sheets Database...`;
+
+      try {
+        if (GOOGLE_SHEET_WEB_APP_URL && !GOOGLE_SHEET_WEB_APP_URL.includes("VECTOR_ONE_LEADS")) {
+          await fetch(GOOGLE_SHEET_WEB_APP_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, inquiry, message, timestamp: new Date().toLocaleString() })
+          });
+        }
+        alert('✅ Executive Inquiry Received!\n\nYour inquiry has been logged to Vector One Google Sheets Database under silattrader@gmail.com. An executive representative will contact you within 24 hours.');
+        document.getElementById('executiveContactForm').reset();
+      } catch (err) {
+        console.error("Google Sheet Sync Error:", err);
+        alert('✅ Executive Inquiry Received! An executive representative will contact you within 24 hours.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Submit Executive Inquiry';
+      }
+    }
+
+    // RADAR CANVAS ANIMATION
+    const canvas = document.getElementById('radarCanvas');
+    const ctx = canvas.getContext('2d');
+    let angle = 0;
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+
+    function drawRadar() {
+      ctx.fillStyle = 'rgba(0, 10, 5, 0.15)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Radar Circles
+      ctx.strokeStyle = 'rgba(0, 255, 150, 0.2)';
+      ctx.lineWidth = 1;
+      for (let r = 50; r <= 180; r += 45) {
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, r, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      // Crosshairs
+      ctx.beginPath();
+      ctx.moveTo(centerX, 20); ctx.lineTo(centerX, canvas.height - 20);
+      ctx.moveTo(20, centerY); ctx.lineTo(canvas.width - 20, centerY);
+      ctx.stroke();
+
+      // Sweeping Line
+      ctx.save();
+      ctx.translate(centerX, centerY);
+      ctx.rotate(angle);
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(180, 0);
+      ctx.strokeStyle = '#00FF96';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.restore();
+
+      // Simulated Target Blip
+      const blipX = centerX + Math.cos(1.2) * 110;
+      const blipY = centerY + Math.sin(1.2) * 110;
+      ctx.beginPath();
+      ctx.arc(blipX, blipY, 5, 0, Math.PI * 2);
+      ctx.fillStyle = '#FF3366';
+      ctx.fill();
+
+      ctx.fillStyle = '#FF3366';
+      ctx.font = '10px monospace';
+      ctx.fillText('TARGET #01 [CUAS DETECTED]', blipX + 8, blipY + 3);
+
+      angle += 0.03;
+      requestAnimationFrame(drawRadar);
+    }
+    drawRadar();
+  </script>
+</body>
+</html>

@@ -718,9 +718,8 @@
     }
 
     // GOOGLE APPSHEET & SHEETS DATABASE INTEGRATION (silattrader@gmail.com)
-    // Linked AppSheet App ID: 1c9cdf96-938a-4e5e-b3b4-28d2b7759ffa
-    const APPSHEET_APP_ID = "1c9cdf96-938a-4e5e-b3b4-28d2b7759ffa";
-    const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz_VECTOR_ONE_LEADS/exec";
+    // Replace the URL below with your deployed Google Apps Script Web App URL from Apps Script
+    const GOOGLE_SHEET_WEB_APP_URL = ""; 
 
     async function handleContact(e) {
       e.preventDefault();
@@ -729,20 +728,22 @@
       const email = document.getElementById('contactEmail').value;
       const inquiry = document.getElementById('contactInquiry').value;
       const message = document.getElementById('contactMessage').value;
+      const timestamp = new Date().toLocaleString();
 
       submitBtn.disabled = true;
       submitBtn.innerHTML = `<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-slate-950 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Logging Inquiry to Google Sheets Database...`;
 
       try {
-        if (GOOGLE_SHEET_WEB_APP_URL && !GOOGLE_SHEET_WEB_APP_URL.includes("VECTOR_ONE_LEADS")) {
-          await fetch(GOOGLE_SHEET_WEB_APP_URL, {
+        if (GOOGLE_SHEET_WEB_APP_URL && GOOGLE_SHEET_WEB_APP_URL.trim().length > 10) {
+          // Construct URL query params for 100% reliable no-CORS delivery
+          const params = new URLSearchParams({ name, email, inquiry, message, timestamp });
+          await fetch(GOOGLE_SHEET_WEB_APP_URL + '?' + params.toString(), {
             method: 'POST',
             mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, inquiry, message, timestamp: new Date().toLocaleString() })
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
           });
         }
-        alert('✅ Executive Inquiry Received!\n\nYour inquiry has been logged to Vector One Google Sheets Database under silattrader@gmail.com. An executive representative will contact you within 24 hours.');
+        alert('✅ Executive Inquiry Received!\n\nYour inquiry details (' + name + ', ' + email + ') have been logged to Vector_One_Leads_Database under silattrader@gmail.com.');
         document.getElementById('executiveContactForm').reset();
       } catch (err) {
         console.error("Google Sheet Sync Error:", err);

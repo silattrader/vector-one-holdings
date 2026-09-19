@@ -738,9 +738,8 @@
           // Construct URL query params for 100% reliable no-CORS delivery
           const params = new URLSearchParams({ name, email, inquiry, message, timestamp });
           await fetch(GOOGLE_SHEET_WEB_APP_URL + '?' + params.toString(), {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            method: 'GET',
+            mode: 'no-cors'
           });
         }
         alert('✅ Executive Inquiry Received!\n\nYour inquiry details (' + name + ', ' + email + ') have been logged to Vector_One_Leads_Database under silattrader@gmail.com.');

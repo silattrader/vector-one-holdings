@@ -717,8 +717,9 @@
       document.getElementById('annualSavings').innerText = '$' + annualNet.toLocaleString();
     }
 
-    // GOOGLE SHEETS INTEGRATION FOR LEAD CAPTURE (silattrader@gmail.com)
-    // Replace the URL below with your Google Apps Script Web App URL
+    // GOOGLE APPSHEET & SHEETS DATABASE INTEGRATION (silattrader@gmail.com)
+    // Linked AppSheet App ID: 1c9cdf96-938a-4e5e-b3b4-28d2b7759ffa
+    const APPSHEET_APP_ID = "1c9cdf96-938a-4e5e-b3b4-28d2b7759ffa";
     const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz_VECTOR_ONE_LEADS/exec";
 
     async function handleContact(e) {

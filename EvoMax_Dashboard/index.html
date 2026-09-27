@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvoMax Gateway | Sovereign Token Logistics</title>
+    <meta name="description" content="Vector Compute EvoMax Dashboard - AI Token Compression & Sovereignty Gateway">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="logo-container">
+                <div class="logo-icon"></div>
+                <h2>VECTOR COMPUTE</h2>
+            </div>
+            <nav>
+                <a href="#" class="nav-item active"><span class="icon">⊞</span> Overview</a>
+                <a href="#" class="nav-item"><span class="icon">⚡</span> Token Simulator</a>
+                <a href="#" class="nav-item"><span class="icon">🔒</span> Data Sovereignty</a>
+                <a href="#" class="nav-item"><span class="icon">📊</span> Telemetry</a>
+                <a href="#" class="nav-item"><span class="icon">⚙️</span> Settings</a>
+            </nav>
+            <div class="system-status">
+                <div class="status-indicator online"></div>
+                <span>EvoMax Gateway: <strong>ONLINE</strong></span>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <div>
+                    <h1>EvoMax Command Center</h1>
+                    <p class="subtitle">Live Token Compression & Sovereign Routing</p>
+                </div>
+                <button class="primary-btn">Generate Audit Report</button>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Calculator Panel -->
+                <section class="calculator-panel glass-panel">
+                    <h3>Token Savings Calculator</h3>
+                    
+                    <div class="input-group">
+                        <label for="model-select">Target LLM</label>
+                        <select id="model-select">
+                            <option value="15.00">GPT-4o ($15.00 / 1M output tokens)</option>
+                            <option value="10.00">Claude 3.5 Sonnet ($15.00 / 1M output tokens)</option>
+                            <option value="3.00">Gemini 1.5 Pro ($3.00 / 1M output tokens)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="token-volume">Monthly Token Volume (Millions)</label>
+                        <input type="range" id="token-volume" min="10" max="1000" value="100" step="10">
+                        <div class="range-value"><span id="volume-display">100</span>M Tokens</div>
+                    </div>
+
+                    <div class="results-container">
+                        <div class="result-card standard">
+                            <h4>Raw API Cost</h4>
+                            <div class="price" id="raw-cost">$1,500</div>
+                            <span class="label">per month</span>
+                        </div>
+                        <div class="result-card evomax">
+                            <h4>EvoMax Cost</h4>
+                            <div class="price highlight" id="evomax-cost">$900</div>
+                            <span class="label">with 40% compression</span>
+                        </div>
+                    </div>
+                    
+                    <div class="savings-banner">
+                        Annual Savings: <strong id="annual-savings">$7,200</strong>
+                    </div>
+                </section>
+
+                <!-- Live Metrics -->
+                <section class="metrics-panel">
+                    <div class="metric-card glass-panel">
+                        <div class="metric-header">Tokens Compressed</div>
+                        <div class="metric-value counter" data-target="14258900">0</div>
+                        <div class="metric-trend positive">↑ 12% this week</div>
+                    </div>
+                    <div class="metric-card glass-panel">
+                        <div class="metric-header">Avg. Latency Reduction</div>
+                        <div class="metric-value">-142<span class="unit">ms</span></div>
+                        <div class="metric-trend positive">Via Semantic Caching</div>
+                    </div>
+                    <div class="metric-card glass-panel">
+                        <div class="metric-header">PII Entities Scrubbed</div>
+                        <div class="metric-value counter" data-target="84092">0</div>
+                        <div class="metric-trend secure">🔒 Zero Retention Guaranteed</div>
+                    </div>
+                </section>
+                
+                <!-- Simulated Live Stream -->
+                <section class="live-stream-panel glass-panel">
+                    <h3>Live Gateway Telemetry</h3>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="terminal-body" id="terminal-output">
+                            <!-- JS will populate this -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
